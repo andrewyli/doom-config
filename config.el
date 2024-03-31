@@ -92,3 +92,7 @@
 
          )
   )
+
+;; enable company autocomplete in prog-mode
+
+(add-hook 'markdown-mode-hook (lambda () (company-mode -1)))

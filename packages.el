@@ -51,3 +51,4 @@
 
 (package! pipenv)
 (package! pytest)
+(package! conda)
