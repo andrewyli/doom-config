@@ -96,3 +96,9 @@
 ;; enable company autocomplete in prog-mode
 
 (add-hook 'markdown-mode-hook (lambda () (company-mode -1)))
+
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
