@@ -52,3 +52,4 @@
 (package! pipenv)
 (package! pytest)
 (package! conda)
+(package! lsp-pyright)

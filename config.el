@@ -85,7 +85,6 @@
                      (setq tab-width 2)
                      (setq evil-shift-width 2)
                      (setq python-indent 2)
-                     (setq flycheck-python-pylint-executable "/home/andrewyli/anaconda3/bin/pylint")
                      (flycheck-select-checker 'python-pylint)
                      )
                    )
@@ -102,3 +101,8 @@
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
                           (lsp))))  ; or lsp-deferred
+
+(dolist (hook '(pyvenv-post-activate-hooks pyvenv-post-deactivate-hooks))
+        (add-hook hook
+                (lambda ()
+                        (setq flycheck-python-pylint-executable (concat pyvenv-virtual-env "bin/pylint")))))
